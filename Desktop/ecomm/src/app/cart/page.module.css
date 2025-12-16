@@ -1,0 +1,175 @@
+.emptyIcon {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cartItem {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.itemImageWrapper {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .itemContent {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.itemInfo {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .itemInfo {
+    margin-bottom: 0;
+  }
+}
+
+.itemName {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.itemName:hover {
+  color: var(--primary);
+}
+
+.itemCategory {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.qtyBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 1.1rem;
+}
+
+.qtyBtn:hover {
+  background-color: var(--muted);
+}
+
+.qtyValue {
+  width: 32px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.itemPrice {
+  font-weight: 600;
+  min-width: 80px;
+  text-align: right;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: var(--muted-foreground);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  color: var(--destructive);
+  background-color: #fee2e2; /* Red 100 */
+}
+
+.summary {
+  align-self: start;
+}
+
+.summaryCard {
+  background-color: var(--muted);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+.summaryTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: var(--muted-foreground);
+}
+
+.totalRow {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  font-size: 1.125rem;
+}

@@ -1,0 +1,85 @@
+.footer {
+  background-color: var(--muted);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--foreground);
+}
+
+.list {
+  list-style: none;
+}
+
+.list li {
+  margin-bottom: 0.75rem;
+}
+
+.list a {
+  color: var(--muted-foreground);
+}
+
+.list a:hover {
+  color: var(--primary);
+}
+
+.text {
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  font-family: inherit;
+}
+
+.input:focus {
+  border-color: var(--primary);
+}
+
+.copyright {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}

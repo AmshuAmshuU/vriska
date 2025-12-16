@@ -1,0 +1,113 @@
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.infoTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.infoText {
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.infoLink {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.infoDetail {
+  color: var(--foreground);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.formCard {
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+@media (min-width: 640px) {
+  .formCard {
+    padding: 3rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.input,
+.textarea {
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--primary);
+}
+
+.textarea {
+  resize: vertical;
+}
