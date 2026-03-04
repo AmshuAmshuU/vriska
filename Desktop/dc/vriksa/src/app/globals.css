@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #fdfdfb;
+  --foreground: #1a1a1a;
+  --primary: #2d5a27; /* Forest Green */
+  --primary-foreground: #ffffff;
+  --secondary: #d4af37; /* Gold */
+  --secondary-foreground: #1a1a1a;
+  --accent: #f4f1ea; /* Light Earth */
+  --muted: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --border: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1710;
+    --foreground: #fdfdfb;
+    --primary: #3d7a35;
+    --primary-foreground: #ffffff;
+    --secondary: #e5c158;
+    --secondary-foreground: #0f1710;
+    --accent: #1a241b;
+    --muted: #9ca3af;
+    --card: #162017;
+    --card-foreground: #fdfdfb;
+    --border: #263528;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass-card {
+    background-color: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+  }
+
+  .heading-xl {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .heading-xl {
+      font-size: 4.5rem;
+    }
+  }
+
+  .heading-lg {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .heading-lg {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #2d5a27, #d4af37);
+}
+
+.nav-link {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.nav-link:hover {
+  color: #d4af37;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  height: 2px;
+  width: 0;
+  background-color: #d4af37;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.font-script {
+  font-family: "Caveat", cursive;
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.05;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.reveal-text {
+  overflow: hidden;
+  display: inline-block;
+}
