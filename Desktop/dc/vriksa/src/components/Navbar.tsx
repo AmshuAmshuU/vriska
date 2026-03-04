@@ -38,10 +38,13 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <Leaf className="text-[#2d5a27] w-8 h-8" />
-          <span className="text-2xl font-bold tracking-tighter gradient-text">
+          <Leaf className={`${isScrolled ? 'text-[#2d5a27]' : 'text-white'} w-8 h-8 transition-colors duration-300`} />
+          <span className={`text-2xl font-bold tracking-tighter transition-colors duration-300 ${
+            isScrolled ? 'text-[#2d5a27]' : 'text-white'
+          }`}>
             VRIKSA
           </span>
         </motion.div>
@@ -55,20 +58,31 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="nav-link font-medium"
+              className={`nav-link ${
+                isScrolled 
+                  ? "text-gray-900 dark:text-gray-100" 
+                  : "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+              }`}
             >
               {link.name}
             </motion.a>
           ))}
-          <button className="bg-[#2d5a27] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#3d7a35] transition-all shadow-md">
+          <button className={`px-6 py-2 rounded-full font-bold transition-all shadow-xl hover:scale-105 active:scale-95 ${
+            isScrolled 
+              ? "bg-[#2d5a27] text-white hover:bg-[#3d7a35]" 
+              : "bg-white text-[#2d5a27] hover:bg-gray-100"
+          }`}>
             Inquiry
           </button>
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X /> : <Menu />}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`${isScrolled ? 'text-gray-900' : 'text-white'} transition-colors duration-300`}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
@@ -88,7 +102,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium hover:text-[#2d5a27]"
+                  className="text-xl font-bold text-gray-900 dark:text-white hover:text-[#2d5a27] transition-colors py-2 border-b border-gray-100 dark:border-gray-800"
                 >
                   {link.name}
                 </a>

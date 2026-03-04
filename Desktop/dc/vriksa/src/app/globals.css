@@ -108,12 +108,12 @@ body {
 .nav-link {
   position: relative;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.25rem;
-  font-weight: 500;
-  transition-property: color;
+  font-weight: 600;
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition-duration: 300ms;
 }
 
 .nav-link:hover {
